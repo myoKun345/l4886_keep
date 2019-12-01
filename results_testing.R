@@ -130,12 +130,15 @@ coca_prts <- coca_valid %>% top_particles_and_assoc()
 
 both <- rbind(bnc_valid, coca_valid)
 both_dtab <- xtabs(~aspect + dialect, data=both); both_dtab
+both_dtabp <- prop.table(both_dtab, 2); both_dtabp
 chisq.test(both_dtab)
 
 both_ttab <- xtabs(~aspect + tense, data=both); both_ttab
+both_ttabp <- prop.table(both_ttab, 2); both_ttabp
 chisq.test(both_ttab)
 
 both_stab <- xtabs(~aspect + subjp, data=both); both_stab
+both_stabp <- prop.table(both_stab, 2); both_stabp
 chisq.test(both_stab)
 
 both_wtab <- xtabs(~aspect + ving, data=both); both_wtab
